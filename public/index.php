@@ -1,4 +1,8 @@
 <?php
+    /*
+     *  Fichier centrale de mon projet, il est la uniquement pour lancer le routeur.
+     *  Et c'est ce fichier qui sera sytematiquement interoger a chaque fois que l'on va charger une page
+     */
 
 // On importe les namespaces nécessaires
 use App\Autoloader;

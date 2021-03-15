@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require_once 'includes/head.php';
+require_once '../Views/includes/head.php';
 ?>
 <body>
 
@@ -222,7 +222,7 @@ require_once 'includes/head.php';
     </div>
 </main>
 <?php
-require_once 'includes/footer.php';
+require_once '../Views/includes/footer.php';
 ?>
 </body>
 </html>

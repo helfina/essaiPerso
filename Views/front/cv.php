@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require_once 'includes/head.php';
+require_once ROOT.'/includes/head.php';
 ?>
 <body>
 <?php
