@@ -1,62 +1,62 @@
 <?php
-
 namespace App\Core;
 
+use App\Controllers\MainController;
+
+/**
+ * Routeur principal
+ */
 class Main
 {
     /*
-     * fonction qui permet de demarrer l'application c'est notre routeur
-     * elle va chercher et lire nos url
-     */
+    * fonction qui permet de demarrer l'application c'est notre routeur
+    * elle va chercher et lire nos url
+    */
     public function start()
     {
         //var_dump($_GET);
+        // On démarre la session
+        session_start();
 
-        // On récupère l'adresse
+        // On retire le "trailing slash" éventuel de l'URL
+        // On récupère l'URL
         $uri = $_SERVER['REQUEST_URI'];
 
-        // On vérifie si elle n'est pas vide et si elle se termine par un /
-        if (!empty($uri) && $uri != '/' && $uri[-1] === '/') {
-            // Dans ce cas on enlève le /
+        // On vérifie que uri n'est pas vide et se termine par un /
+        if(!empty($uri) && $uri != '/' && $uri[-1] === "/"){
+            // On enlève le /
             $uri = substr($uri, 0, -1);
 
-            // On envoie une redirection permanente
+            // On envoie un code de redirection permanente
             http_response_code(301);
 
-            // On redirige vers l'URL dans /
-            header('Location: ' . $uri);
-            exit;
+            // On redirige vers l'URL sans /
+            header('Location: '.$uri);
         }
-        // On sépare les paramètres et on les met dans le tableau $params
-        $params = explode('/', $_GET['page']);
 
-        // Si au moins 1 paramètre existe
-        if ($params[0] != "") {
-            // On sauvegarde le 1er paramètre dans $controller en mettant sa 1ère lettre en majuscule, en ajoutant le namespace des controleurs et en ajoutant "Controller" à la fin
-            $controller = '\\App\\Controllers\\' . ucfirst(array_shift($params)) . 'Controller';
+        // On gère les paramètres d'URL
+        // p=controleur/methode/paramètres
+        // On sépare les paramètres dans un tableau $params
+        $params = [];
+        if(isset($_GET['page'])){
+            /**
+            pour eviter le duplicate content on explode , ce qui permet de gagner des point en seo ceci est une bonne pratique
+             */
+            //var_dump($_GET);
+            $params = explode('/', $_GET['page']);
 
-            // On sauvegarde le 2ème paramètre dans $action si il existe, sinon index
-            $action = isset($params[0]) ? array_shift($params) : 'index';
-
-            // On instancie le contrôleur
-            $controller = new $controller();
-
-            if (method_exists($controller, $action)) {
-                // Si il reste des paramètres, on appelle la méthode en envoyant les paramètres sinon on l'appelle "à vide"
-                (isset($params[0])) ? $controller->$action($params) : $controller->$action();
-            } else {
-                // On envoie le code réponse 404
-                http_response_code(404);
-                echo "La page recherchée n'existe pas";
+            //var_dump($params);
+            if($params[0] != '') {
+                // On a au moins 1 paramètre
+                var_dump($params);
+                // On récupère le nom du contrôleur à instancier
+                // On met une majuscule en 1ère lettre, on ajoute le namespace complet avant et on ajoute "Controller" après
+            }else{
+                echo 'pas de parametre';
             }
-        } else {
-            // Ici aucun paramètre n'est défini
-            // On instancie le contrôleur par défaut (page d'accueil)
-            $controller = new Controllers\MainController();
-
-            // On appelle la méthode index
-            $controller->index();
         }
 
-    }
+
+
+        }
 }
