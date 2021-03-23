@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-require_once '../Views/includes/head.php';
+require_once ROOT . '/Views/includes/head.php';
+
 ?>
 <body>
 

@@ -15,7 +15,7 @@ class Db extends PDO
     private const DBHOST = 'localhost';
     private const DBUSER = 'root';
     private const DBPASS = 'root';
-    private const DBNAME = 'gk_essaieperso';
+    private const DBNAME = 'gk_essaiperso';
 
     private function __construct()
     {

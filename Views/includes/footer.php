@@ -2,5 +2,5 @@
 
 </footer>
 <!--js-->
-<script src="../public/js/navbar.js"></script>
+<script src="/js/navbar.js"></script>
 

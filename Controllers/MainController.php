@@ -1,11 +1,17 @@
 <?php
 namespace App\Controllers;
 
-class MainController extends Controller {
+use App\Models\cvModel;
+
+class MainController {
 
     public function index()
     {
-        echo 'page accueil';
-       $this->render('front/index', [], 'home');
+
+        echo 'ceci est la page d\'acceuil';
+        // $model = new cvModel;
+        // On récupère les données
+        //$annonces = $model->findAll();
+        //$this->render('/front/home', [], 'home');
     }
 }

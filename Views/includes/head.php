@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
     <!-- css -->
-    <link href="../public/styles/header.css" rel="stylesheet" type="text/css">
-    <link href="../public/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="../public/styles/cv.css" rel="stylesheet" type="text/css">
+    <link href="/styles/header.css" rel="stylesheet" type="text/css">
+    <link href="/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="/styles/cv.css" rel="stylesheet" type="text/css">
 
 
 </head>
