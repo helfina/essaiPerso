@@ -5,9 +5,18 @@ require_once ROOT . '/Views/includes/head.php';
 ?>
 <body>
 <?php
-require_once ROOT . '/Views/includes/header.php';
-?>
 
+require_once ROOT . '/Views/includes/header.php';
+require_once ROOT . '/Controllers/CvController.php';
+//var_dump($donnees);
+
+foreach ($curriculumVitae as $cv) : ?>
+    <article>
+        <h2><?= $cv->titre ?></h2>
+        <p></p>
+    </article>
+<?php endforeach; ?>
+<!--
 <main class="site-wrapper">
     <div class="pt-table desktop-768">
         <div class="pt-tablecell page-home relative" style="background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
@@ -19,7 +28,7 @@ require_once ROOT . '/Views/includes/header.php';
 
                 <div class="main-timeline">
 
-                    <!-- start experience section-->
+                    <-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -39,9 +48,9 @@ require_once ROOT . '/Views/includes/header.php';
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section-->
+                    <!-- end experience section--
 
-                    <!-- start experience section-->
+                    <!-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -61,9 +70,9 @@ require_once ROOT . '/Views/includes/header.php';
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section-->
+                    <!-- end experience section--
 
-                    <!-- start experience section-->
+                    <!-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -85,9 +94,9 @@ require_once ROOT . '/Views/includes/header.php';
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section-->
+                    <!-- end experience section--
 
-                    <!-- start experience section-->
+                    <!-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -116,7 +125,7 @@ require_once ROOT . '/Views/includes/header.php';
 
                         </div>
                     </div>
-                    <!-- end experience section-->
+                    <!-- end experience section--
 
                 </div>
             </div>
@@ -124,10 +133,10 @@ require_once ROOT . '/Views/includes/header.php';
 
         </div>
     </div>
-</main>
+</main>-->
 
 <?php
-require_once 'includes/footer.php';
+require_once ROOT . '/Views/includes/footer.php';
 ?>
 <!--librairy js-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

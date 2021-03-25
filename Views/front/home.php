@@ -2,10 +2,8 @@
 <html lang="fr">
 <?php
 require_once ROOT . '/Views/includes/head.php';
-
 ?>
 <body>
-
 
 <main class="site-wrapper">
     <div class="pt-table desktop-768">
