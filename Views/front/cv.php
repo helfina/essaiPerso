@@ -9,14 +9,9 @@ require_once ROOT . '/Views/includes/head.php';
 require_once ROOT . '/Views/includes/header.php';
 require_once ROOT . '/Controllers/CvController.php';
 //var_dump($donnees);
+?>
 
-foreach ($curriculumVitae as $cv) : ?>
-    <article>
-        <h2><?= $cv->titre ?></h2>
-        <p></p>
-    </article>
-<?php endforeach; ?>
-<!--
+
 <main class="site-wrapper">
     <div class="pt-table desktop-768">
         <div class="pt-tablecell page-home relative" style="background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
@@ -28,7 +23,29 @@ foreach ($curriculumVitae as $cv) : ?>
 
                 <div class="main-timeline">
 
-                    <-- start experience section--
+
+                    <?php foreach ($CVs as $cv) : ?>
+                        <section class="timeline">
+                            <div class="icon"></div>
+                            <article class="date-content">
+                                <div class="date-outer">
+                                    <span class="date">
+                                        <span class="month"><?= $cv->duree ?>Mois</span>
+                                        <span class="year"><?= $cv->annee ?></span>
+                                    </span>
+                                </div>
+                            </article>
+
+                            <article class="timeline-content">
+                                <h5 class="title"><a href="/cv/lire/<?= $cv->id?>"><?= $cv->titre ?></a></h5>
+                                <p class="description">
+                                    <?= $cv->description ?>
+                                </p>
+                            </article>
+                        </section>
+                    <?php endforeach; ?>
+
+                    <!-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -48,9 +65,9 @@ foreach ($curriculumVitae as $cv) : ?>
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section--
+                    <-- end experience section--
 
-                    <!-- start experience section--
+                    <-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -70,9 +87,9 @@ foreach ($curriculumVitae as $cv) : ?>
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section--
+                    <-- end experience section--
 
-                    <!-- start experience section--
+                    <-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -94,9 +111,9 @@ foreach ($curriculumVitae as $cv) : ?>
                             </p>
                         </div>
                     </div>
-                    <!-- end experience section--
+                    <-- end experience section--
 
-                    <!-- start experience section--
+                    <-- start experience section--
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
@@ -125,7 +142,7 @@ foreach ($curriculumVitae as $cv) : ?>
 
                         </div>
                     </div>
-                    <!-- end experience section--
+                    <-- end experience section-->
 
                 </div>
             </div>
