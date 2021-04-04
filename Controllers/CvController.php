@@ -13,12 +13,12 @@ class CvController extends Controller
     */
     public function index()
     {
-        echo 'ceci est la page cv';
+
         //$donnees = ['a', 'b'];
         //include_once ROOT.'/Views/front/cv.php';
 
         //on instancie le modele correspondant a la table 'cv'
-        $cvModel = new cvModel();
+        $cvModel = new cvModel;
 
         // on va chercher toute les rubriques du cv active
         $CVs = $cvModel->findBy(['actif' => 1]);

@@ -1,156 +1,139 @@
-<!DOCTYPE html>
-<html lang="fr">
+
 <?php
 require_once ROOT . '/Views/includes/head.php';
 ?>
-<body>
 <?php
 
-require_once ROOT . '/Views/includes/header.php';
+
 require_once ROOT . '/Controllers/CvController.php';
 //var_dump($donnees);
 ?>
 
 
-<main class="site-wrapper">
-    <div class="pt-table desktop-768">
-        <div class="pt-tablecell page-home relative" style="background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
-    background-position: center;
-    background-size: cover;">
-            <div class="overlay"></div>
+<div class="main-timeline">
 
-            <div class="container">
+    <?php foreach ($CVs as $cv) : ?>
+        <section class="timeline">
+            <div class="icon"></div>
+                <article class="date-content">
+                    <div class="date-outer">
+                        <span class="date">
+                            <span class="month"><?= $cv->duree ?>Mois</span>
+                                <span class="year"><?= $cv->annee ?></span>
+                            </span>
+                    </div>
+                </article>
 
-                <div class="main-timeline">
+                <article class="timeline-content">
+                    <h5 class="title"><a href="/cv/lire/<?= $cv->id?>"><?= $cv->titre ?></a></h5>
+                        <p class="description">
+                            <?= $cv->description ?>
+                        </p>
+                </article>
+        </section>
+    <?php endforeach; ?>
 
-
-                    <?php foreach ($CVs as $cv) : ?>
-                        <section class="timeline">
-                            <div class="icon"></div>
-                            <article class="date-content">
-                                <div class="date-outer">
-                                    <span class="date">
-                                        <span class="month"><?= $cv->duree ?>Mois</span>
-                                        <span class="year"><?= $cv->annee ?></span>
-                                    </span>
+        <!-- start experience section--
+                            <div class="timeline">
+                                <div class="icon"></div>
+                                <div class="date-content">
+                                    <div class="date-outer">
+                                            <span class="date">
+                                                    <span class="month">2 Mois</span>
+                                            <span class="year">2021</span>
+                                            </span>
+                                    </div>
                                 </div>
-                            </article>
-
-                            <article class="timeline-content">
-                                <h5 class="title"><a href="/cv/lire/<?= $cv->id?>"><?= $cv->titre ?></a></h5>
-                                <p class="description">
-                                    <?= $cv->description ?>
-                                </p>
-                            </article>
-                        </section>
-                    <?php endforeach; ?>
-
-                    <!-- start experience section--
-                    <div class="timeline">
-                        <div class="icon"></div>
-                        <div class="date-content">
-                            <div class="date-outer">
-                                    <span class="date">
-                                            <span class="month">2 Mois</span>
-                                    <span class="year">2021</span>
-                                    </span>
+                                <div class="timeline-content">
+                                    <h5 class="title">Développeur Intégrateur Web</h5>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
+                                        scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
+                                        Praesent dapibus dolor felis, eu ultrices elit molestie.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="title">Développeur Intégrateur Web</h5>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
-                                scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
-                                Praesent dapibus dolor felis, eu ultrices elit molestie.
-                            </p>
-                        </div>
-                    </div>
-                    <-- end experience section--
+                            <-- end experience section--
 
-                    <-- start experience section--
-                    <div class="timeline">
-                        <div class="icon"></div>
-                        <div class="date-content">
-                            <div class="date-outer">
-                                    <span class="date">
-                                            <span class="month">2 mois</span>
-                                    <span class="year">2020</span>
-                                    </span>
+                            <-- start experience section--
+                            <div class="timeline">
+                                <div class="icon"></div>
+                                <div class="date-content">
+                                    <div class="date-outer">
+                                            <span class="date">
+                                                    <span class="month">2 mois</span>
+                                            <span class="year">2020</span>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5 class="title">Développeur Intégrateur Web</h5>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
+                                        scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
+                                        Praesent dapibus dolor felis, eu ultrices elit molestie.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="title">Développeur Intégrateur Web</h5>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
-                                scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
-                                Praesent dapibus dolor felis, eu ultrices elit molestie.
-                            </p>
-                        </div>
-                    </div>
-                    <-- end experience section--
+                            <-- end experience section--
 
-                    <-- start experience section--
-                    <div class="timeline">
-                        <div class="icon"></div>
-                        <div class="date-content">
-                            <div class="date-outer">
-                                    <span class="date">
-                                            <span class="month">4 Mois</span>
-                                    <span class="year">2019</span>
-                                    </span>
+                            <-- start experience section--
+                            <div class="timeline">
+                                <div class="icon"></div>
+                                <div class="date-content">
+                                    <div class="date-outer">
+                                            <span class="date">
+                                                    <span class="month">4 Mois</span>
+                                            <span class="year">2019</span>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5 class="title">Développeur React Js</h5>
+                                    <p class="description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
+                                        scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
+                                        Praesent dapibus dolor felis, eu ultrices elit molestie.
+
+
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="title">Développeur React Js</h5>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur ex sit amet massa
-                                scelerisque scelerisque. Aliquam erat volutpat. Aenean interdum finibus efficitur.
-                                Praesent dapibus dolor felis, eu ultrices elit molestie.
+                            <-- end experience section--
 
+                            <-- start experience section--
+                            <div class="timeline">
+                                <div class="icon"></div>
+                                <div class="date-content">
+                                    <div class="date-outer">
+                                            <span class="date">
+                                                    <span class="month">6 Mois</span>
+                                            <span class="year">2019</span>
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="timeline-content">
+                                    <h5 class="title">Développeur Intégrateur en Réalisation d’application Web</h5>
+                                    <span>NOVEMBRE 2019 – JUIN 2020</span>
+                                    <p class="description">
+                                        Kercode, est une formation de 6 mois intensive
+                                    </p>
+                                    <ul>
+                                        <li>Langages et outils utilisée :</li>
+                                        <li>HTML CSS – SASS, Bootstrap 4
+                                        <li>Javascript, JQuery</li>
+                                        <li>SEO, Ergonomie, Architecture</li>
+                                        <li>PHP, MySQL, PostgreSQL</li>
+                                        <li>WordPress, Laravel</li>
+                                        <li>Composer, PHP Maile</li>
+                                    </ul>
 
-                            </p>
-                        </div>
-                    </div>
-                    <-- end experience section--
-
-                    <-- start experience section--
-                    <div class="timeline">
-                        <div class="icon"></div>
-                        <div class="date-content">
-                            <div class="date-outer">
-                                    <span class="date">
-                                            <span class="month">6 Mois</span>
-                                    <span class="year">2019</span>
-                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="title">Développeur Intégrateur en Réalisation d’application Web</h5>
-                            <span>NOVEMBRE 2019 – JUIN 2020</span>
-                            <p class="description">
-                                Kercode, est une formation de 6 mois intensive
-                            </p>
-                            <ul>
-                                <li>Langages et outils utilisée :</li>
-                                <li>HTML CSS – SASS, Bootstrap 4
-                                <li>Javascript, JQuery</li>
-                                <li>SEO, Ergonomie, Architecture</li>
-                                <li>PHP, MySQL, PostgreSQL</li>
-                                <li>WordPress, Laravel</li>
-                                <li>Composer, PHP Maile</li>
-                            </ul>
+                            <-- end experience section-->
 
-                        </div>
-                    </div>
-                    <-- end experience section-->
+</div>
 
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</main>-->
 
 <?php
 require_once ROOT . '/Views/includes/footer.php';

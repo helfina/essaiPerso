@@ -7,9 +7,8 @@ class MainController extends Controller {
 
     public function index()
     {
-
-        echo 'ceci est la page d\'acceuil';
-        include_once ROOT. './Views/front/home.php';
+        //$this->template = 'home';
+        $this->render('front/home', [], 'home');
 
     }
 }

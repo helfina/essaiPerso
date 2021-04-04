@@ -8,10 +8,10 @@
         </button>
 
         <ul>
-            <li><a href="/home.php">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Service</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 

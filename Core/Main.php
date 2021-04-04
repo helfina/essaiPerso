@@ -51,7 +51,7 @@ class Main
              * On met une majuscule en 1ère lettre, on ajoute le namespace complet avant et on ajoute "Controller" après
              */
             $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller';
-            var_dump($controller);
+            //var_dump($controller);
             // On instancie le contrôleur
             $controller = new $controller();
 
