@@ -2,7 +2,7 @@
 
 
 namespace App\Controllers;
-
+use App\Core\Form;
 
 class UsersController extends Controller
 {
@@ -21,6 +21,6 @@ class UsersController extends Controller
             ->finForm();
 
         // On envoie le formulaire à la vue en utilisant notre méthode "create"
-        $this->render('admin/login', ['loginForm' => $form->create()]);
+        $this->render('users/login', ['loginForm' => $form->create()]);
     }
 }
