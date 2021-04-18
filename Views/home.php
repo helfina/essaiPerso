@@ -16,7 +16,6 @@ require_once ROOT . '/Views/includes/head.php';
                 <div class="row">
                     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                         <!-- contenue de la page-->
-                        <h1>Hello</h1>
                         <?= $contenu ?>
                         <!--  Fin contenue de la page-->
 

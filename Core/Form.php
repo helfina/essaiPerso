@@ -88,6 +88,7 @@ class Form
         $this->formCode .= '</form>';
         return $this;
     }
+
     /**
      * Ajout d'un label
      * @param string $for
