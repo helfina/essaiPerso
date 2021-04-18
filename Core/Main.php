@@ -16,7 +16,7 @@ class Main
     {
         //var_dump($_GET);
         // On démarre la session
-        //session_start();
+        session_start();
 
         // On retire le "trailing slash" éventuel de l'URL
         // On récupère l'URL
