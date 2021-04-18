@@ -13,6 +13,14 @@
             <li><a href="#">Service</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
-    </nav>
 
+        <ul>
+            <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
+            <li><a href="/users/profil">Profil</a></li>
+            <li><a href="/users/logout">Déconnexion</a></li>
+            <?php else: ?>
+            <li><a href="/users/login">Connexion</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
 </header>
