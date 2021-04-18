@@ -15,7 +15,7 @@
             <div></div>
             <div></div>
         </div>
-        <a href="#" class="hex-content">
+        <a href="../users/login" class="hex-content">
            <span class="hex-content-inner">
                 <span class="icon">
                      <i class="fa fa-universal-access"></i>
