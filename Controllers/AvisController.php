@@ -21,7 +21,7 @@ class AvisController extends Controller
         //var_dump($CVs);
 
         // On génère la vue
-        $this->render('front/avis',compact('avis'));
+        $this->render('avis/avis',compact('avis'));
 
     }
     /**
@@ -38,6 +38,9 @@ class AvisController extends Controller
         $avi = $AvisModel->find($id);
 
         // on envoie a la vue
-        $this->render('front/lireAvi',compact('avi'));
+        $this->render('avis/lire',compact('avi'));
+    }
+    public function  ajouter(){
+        echo 'ajouter';
     }
 }
