@@ -16,9 +16,15 @@ require_once ROOT . '/Views/includes/header.php';
 
             <div class="container">
                 <div class="row">
+                    <?php if (!empty($_SESSION['message'])): ?>
+                        <div class="alert alert-success text-success" role="alert">
+                            <?php echo $_SESSION['message'];
+                            unset($_SESSION['message']); ?>
+                        </div>
+                    <?php endif; ?>
                     <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                         <!-- contenue de la page-->
-                            <?= $contenu ?>
+                        <?= $contenu ?>
                         <!--  Fin contenue de la page-->
 
                     </div>
