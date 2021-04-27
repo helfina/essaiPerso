@@ -20,7 +20,7 @@
                 <span class="icon">
                      <i class="fa fa-universal-access"></i>
                 </span>
-                <span class="title">Welcome</span>
+                <span class="title">Connexion</span>
            </span>
             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
                  xmlns="http://www.w3.org/2000/svg">
@@ -154,12 +154,12 @@
             <div></div>
             <div></div>
         </div>
-        <a href="/testimonials" class="hex-content">
+        <a href="/Avis" class="hex-content">
             <span class="hex-content-inner">
                 <span class="icon">
                     <i class="fa fa-clipboard"></i>
                 </span>
-                <span class="title">Testimonials</span>
+                <span class="title">Avis</span>
             </span>
             <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
                  xmlns="http://www.w3.org/2000/svg">
