@@ -14,7 +14,7 @@ class UsersController extends Controller
      */
     public function login()
     {
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
         // On vérifie si le formulaire est complet
         if (Form::validate($_POST, ['email', 'password'])) {
             // Le formulaire est complet
@@ -71,7 +71,7 @@ class UsersController extends Controller
      */
     public function register()
     {
-        var_dump($_POST);
+        //var_dump($_POST);
         // On vérifie si le formulaire est valide
         if (Form::validate($_POST, ['email', 'password'])) {
             // Le formulaire est valide
