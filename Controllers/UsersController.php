@@ -46,7 +46,6 @@ class UsersController extends Controller
                 header('Location: /users/login');
                 exit;
             }
-
         }
 
         //On instancie le formulaire
@@ -115,5 +114,10 @@ class UsersController extends Controller
         unset($_SESSION['users']);
         header('Location:' . $_SERVER['HTTP_REFERER']);
         exit;
+    }
+
+    public function profil(){
+        // On génère la vue
+        $this->render('users/profil');
     }
 }
