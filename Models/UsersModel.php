@@ -10,6 +10,8 @@ class UsersModel extends Model
     protected $email;
     protected $password;
     protected $roles;
+    protected $users_id;
+
 
     public function __construct()
     {
@@ -123,5 +125,20 @@ class UsersModel extends Model
         $this->roles = json_decode($roles);
 
         return $this;
+    }
+    /**
+     * @return mixed
+     */
+    public function getUsersId():int
+    {
+        return $this->users_id;
+    }
+
+    /**
+     * @param mixed $users_id
+     */
+    public function setUsersId( int $users_id): void
+    {
+        $this->users_id = $users_id;
     }
 }
