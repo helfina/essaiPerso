@@ -12,13 +12,21 @@ class Model extends Db
     // Instance de Db
     private $db;
 
-
+    /**
+     * Sélection de tous les enregistrements d'une table
+     * @return array Tableau des enregistrements trouvés
+     */
     public function findAll()
     {
         $query = $this->requete('SELECT * FROM ' . $this->table);
         return $query->fetchAll();
     }
 
+    /**
+     * Sélection de plusieurs enregistrements suivant un tableau de critères
+     * @param array $criteres Tableau de critères
+     * @return array Tableau des enregistrements trouvés
+     */
     public function findBy(array $criteres)
     {
         $champs = [];
@@ -39,6 +47,11 @@ class Model extends Db
         return $this->requete('SELECT * FROM ' . $this->table . ' WHERE ' . $liste_champs, $valeurs)->fetchAll();
     }
 
+    /**
+     * Sélection d'un enregistrement suivant son id
+     * @param int $id id de l'enregistrement
+     * @return array Tableau contenant l'enregistrement trouvé
+     */
     public function find(int $id)
     {
         return $this->requete("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
