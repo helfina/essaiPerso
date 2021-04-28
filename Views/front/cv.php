@@ -1,15 +1,3 @@
-
-<?php
-require_once ROOT . '/Views/includes/head.php';
-?>
-<?php
-
-
-require_once ROOT . '/Controllers/CvController.php';
-//var_dump($donnees);
-?>
-
-
 <div class="main-timeline">
 
     <?php foreach ($CVs as $cv) : ?>
@@ -133,11 +121,6 @@ require_once ROOT . '/Controllers/CvController.php';
                             <-- end experience section-->
 
 </div>
-
-
-<?php
-require_once ROOT . '/Views/includes/footer.php';
-?>
 <!--librairy js-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
