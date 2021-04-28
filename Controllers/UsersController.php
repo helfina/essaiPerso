@@ -106,13 +106,17 @@ class UsersController extends Controller
     }
 
     /**
-    * Déconnexion de l'utilisateur
-    * @return exit
-    */
-    public function logout()
-    {
-        unset($_SESSION['users']);
-        header('Location:' . $_SERVER['HTTP_REFERER']);
+     * Déconnexion de l'utilisateur
+     * @return exit
+     */
+    public function logout(){
+        unset($_SESSION['user']);
+        $_SESSION['message'] = 'Vous etes bien déconnecter';
+
+        /*redirection vers la page referente
+         * header('Location: '. $_SERVER['HTTP_REFERER']);
+         */
+        header('Location:  /' );
         exit;
     }
 
