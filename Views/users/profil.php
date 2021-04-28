@@ -15,7 +15,6 @@
 <ul style="display: flex; flex-direction: column; margin-left: 100px">
     <li><a href="/avis">voir mes avis</a></li>
     <li><a href="/avis/ajouter">ajouter un avis</a></li>
-    <li><a href="/avis/modifier">modifier mes avis</a></li>
 </ul>
 
 </section>
