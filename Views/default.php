@@ -16,6 +16,11 @@ require_once ROOT . '/Views/includes/header.php';
 
             <div class="container">
                 <div class="row">
+                    <?php if(!empty($_SESSION['erreur'])): ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+                        </div>
+                    <?php endif; ?>
                     <?php if (!empty($_SESSION['message'])): ?>
                         <div class="alert alert-success text-success" role="alert">
                             <?php echo $_SESSION['message'];

@@ -34,7 +34,7 @@ class AvisController extends Controller
      */
     public function lire(int $id)
     {
-        echo $id;
+        //echo $id;
         // On inctancie le modele
         $AvisModel = new AvisModel;
 
