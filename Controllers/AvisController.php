@@ -194,7 +194,7 @@ class AvisController extends Controller
         $avis = $AvisModel->findBy(['users_id' => $_SESSION['user']['id']]);
         //var_dump($CVs);
 
-        // On génère la vue
+        // On génère la vue (en utilisant la meme views mais un url different)
         $this->render('avis/lister', compact('avis'));
 
     }
