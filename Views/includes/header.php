@@ -15,11 +15,16 @@
         </ul>
 
         <ul>
-            <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
-            <li><a href="/users/profil">Profil</a></li>
-            <li><a href="/users/logout">Déconnexion</a></li>
+            <?php if (!empty($_SESSION['user']['id'])): ?>
+
+                <?php if (isset($_SESSION['user']['roles']) && in_array("ROLE_ADMIN", $_SESSION['user']['roles'])): ?>
+                    <li><a href="/admin/index">admin</a></li>
+                <?php endif; ?>
+
+                <li><a href="/users/profil">Profil</a></li>
+                <li><a href="/users/logout">Déconnexion</a></li>
             <?php else: ?>
-            <li><a href="/users/login">Connexion</a></li>
+                <li><a href="/users/login">Connexion</a></li>
             <?php endif; ?>
         </ul>
     </nav>
