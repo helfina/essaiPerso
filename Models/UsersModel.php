@@ -38,7 +38,7 @@ class UsersModel extends Model
         $_SESSION['user'] = [
             'id' => $this->id,
             'email' => $this->email,
-            'roles' => $this->roFles
+            'roles' => $this->roles
         ];
     }
 
