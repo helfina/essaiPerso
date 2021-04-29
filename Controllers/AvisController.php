@@ -13,7 +13,7 @@ class AvisController extends Controller
     {
 
         //$donnees = ['a', 'b'];
-        //include_once ROOT.'/Views/front/avis.php';
+        //include_once ROOT.'/Views/front/lister.php';
 
         //on instancie le modele correspondant a la table 'cv'
         $AvisModel = new AvisModel;
@@ -23,7 +23,7 @@ class AvisController extends Controller
         //var_dump($CVs);
 
         // On génère la vue
-        $this->render('avis/avis', compact('avis'));
+        $this->render('avis/lister', compact('avis'));
 
     }
 
@@ -81,6 +81,7 @@ class AvisController extends Controller
                 // le formulaire est incomplet
 
             }
+
             $form = new Form();
             $form->debutForm()
                 ->ajoutLabelFor('titre', "Titre de l\'avis : ")
@@ -104,9 +105,10 @@ class AvisController extends Controller
      * @param int $id
      * @return void
      */
-    public function modifier(int $id){
+    public function modifier(int $id)
+    {
         // On vérifie si l'utilisateur est connecté
-        if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])){
+        if (isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
             // On va vérifier si l'avis existe dans la base
             // On instancie notre modèle
             $avisModel = new avisModel;
@@ -115,7 +117,7 @@ class AvisController extends Controller
             $avis = $avisModel->find($id);
 
             // Si l'avis n'existe pas, on retourne à la liste des avis
-            if(!$avis){
+            if (!$avis) {
                 http_response_code(404);
                 $_SESSION['erreur'] = "L'avis recherchée n'existe pas";
                 header('Location: /avis');
@@ -123,8 +125,8 @@ class AvisController extends Controller
             }
 
             // On vérifie si l'utilisateur est propriétaire de l'avis ou admin
-            if($avis->users_id !== $_SESSION['user']['id']){
-                if(!in_array('ROLE_ADMIN', $_SESSION['user']['roles'])){
+            if ($avis->users_id !== $_SESSION['user']['id']) {
+                if (!in_array('ROLE_ADMIN', $_SESSION['user']['roles'])) {
                     $_SESSION['erreur'] = "Vous n'avez pas accès à cette page";
                     header('Location: /avis');
                     exit;
@@ -132,7 +134,7 @@ class AvisController extends Controller
             }
 
             // On traite le formulaire
-            if(Form::validate($_POST, ['titre', 'description'])){
+            if (Form::validate($_POST, ['titre', 'description'])) {
                 // On se protège contre les failles XSS
                 $titre = strip_tags($_POST['titre']);
                 $description = strip_tags($_POST['description']);
@@ -154,7 +156,6 @@ class AvisController extends Controller
                 exit;
             }
 
-
             $form = new Form;
 
             $form->debutForm()
@@ -170,18 +171,32 @@ class AvisController extends Controller
                     'class' => 'form-control'
                 ])
                 ->ajoutBouton('Modifier', ['class' => 'btn btn-primary'])
-                ->finForm()
-            ;
+                ->finForm();
 
             // On envoie à la vue
             $this->render('avis/modifier', ['form' => $form->create()]);
 
-        }else{
+        } else {
             // L'utilisateur n'est pas connecté
             $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
             header('Location: /users/login');
             exit;
         }
+    }
+
+    public function mesAvis()
+    {
+
+        //on instancie le modele correspondant a la table 'cv'
+        $AvisModel = new AvisModel;
+
+        // on va chercher toute les rubriques du cv active
+        $avis = $AvisModel->findBy(['users_id' => $_SESSION['user']['id']]);
+        //var_dump($CVs);
+
+        // On génère la vue
+        $this->render('avis/lister', compact('avis'));
+
     }
 
 }
