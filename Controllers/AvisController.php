@@ -83,7 +83,7 @@ class AvisController extends Controller
             }
             $form = new Form();
             $form->debutForm()
-                ->ajoutLabelFor('titre', 'Titre de l\'avis : ')
+                ->ajoutLabelFor('titre', "Titre de l\'avis : ")
                 ->ajoutInput('text', 'titre', ['id' => 'titre', 'class' => 'form-control'])
                 ->ajoutLabelFor('description', 'description')
                 ->ajoutTextarea('description', '', ['id' => 'description', 'class' => 'form-control'])
