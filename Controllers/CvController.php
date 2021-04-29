@@ -34,7 +34,7 @@ class CvController extends Controller
      *@return void
     */
     public function lire(int $id){
-        echo $id;
+        //echo $id;
         // On inctancie le modele
         $cvModel = new cvModel;
 
