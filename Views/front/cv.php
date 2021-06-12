@@ -6,7 +6,7 @@
                 <article class="date-content">
                     <div class="date-outer">
                         <span class="date">
-                            <span class="month"><?= $cv->duree ?>Mois</span>
+                            <span class="month"><?= $cv->duree ?> Mois</span>
                                 <span class="year"><?= $cv->annee ?></span>
                             </span>
                     </div>
@@ -14,6 +14,7 @@
 
                 <article class="timeline-content">
                     <h5 class="title"><a href="/cv/lire/<?= $cv->id?>"><?= $cv->titre ?></a></h5>
+                    <h6 class="entreprise"><a target="_blank" href="<?= $cv->lien?>"><?= $cv->nom_entreprise ?></a></h6>
                         <p class="description">
                             <?= $cv->description ?>
                         </p>
