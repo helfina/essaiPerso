@@ -52,4 +52,16 @@ class AdminController extends Controller
             $this->render('admin/avis', compact('avis'), 'admin');
         }
     }
+        /**
+        * Supprime une annonce si on est admin
+        * @param int $id
+        * @return void
+        */
+    public function supprimeAvis(int $id){
+        if($this->isAdmin()){
+            $avi = new AvisModel;
+            $avi->delete($id);
+            header('Location: '.$_SERVER['HTTP_REFERER']);
+        }
+    }
 }
