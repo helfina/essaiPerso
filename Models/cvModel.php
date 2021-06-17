@@ -12,6 +12,7 @@ class cvModel extends Model
     protected $annee;
     protected $duree;
     protected $nom_entreprise;
+    protected $ecole;
 
     public function __construct()
     {
@@ -134,6 +135,25 @@ class cvModel extends Model
     public function setNom_entreprise($nom_entreprise)
     {
         $this->nom_entreprise = $nom_entreprise;
+
+        return $this;
+    }
+    /**
+     * Get the value of ecole
+     */
+    public function getEcole():int
+    {
+        return $this->ecole;
+    }
+
+    /**
+     * Set the value of ecole
+     *
+     * @return  self
+     */
+    public function setEcole($ecole)
+    {
+        $this->ecole = $ecole;
 
         return $this;
     }
