@@ -9,4 +9,5 @@
 </footer>
 <!--js-->
 <script src="/js/navbar.js"></script>
+<script src="/js/switche.js"></script>
 
