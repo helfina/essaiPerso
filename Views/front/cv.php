@@ -14,7 +14,17 @@
 
                 <article class="timeline-content">
                     <h5 class="title"><a href="/cv/lire/<?= $cv->id?>"><?= $cv->titre ?></a></h5>
-                    <h6 class="entreprise"><a target="_blank" href="<?= $cv->lien?>"><?= $cv->nom_entreprise ?></a></h6>
+                    <h6 class="entreprise">
+                        <a target="_blank" href="<?= $cv->lien?>">
+                            <?php
+                            if(!empty($cv->nom_entreprise)){
+                               echo  $cv->nom_entreprise;
+                            }else{
+                                echo  $cv->ecole;
+                            };
+                            ?>
+                        </a>
+                    </h6>
                         <p class="description">
                             <?= $cv->description ?>
                         </p>
