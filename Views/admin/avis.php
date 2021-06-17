@@ -20,7 +20,7 @@ $avis;
             <td>
 
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1<?= $avi->id ?>" <?= $avi->actif ? 'checked' : ''?>>
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1<?= $avi->id ?>" <?= $avi->actif ? 'checked' : ''?> data-id="<?= $avi->id ?>">
                     <label class="custom-control-label" for="customSwitch1<?= $avi->id ?>"></label>
                 </div>
             </td>
