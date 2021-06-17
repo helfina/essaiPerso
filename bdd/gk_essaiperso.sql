@@ -52,3 +52,7 @@ CREATE TABLE `users` (
 
 
 -- 2021-06-17 09:41:40
+
+-- 17/06/21 -
+ALTER TABLE `users`
+    ADD `actif` tinyint(1) NOT NULL;
