@@ -64,4 +64,26 @@ class AdminController extends Controller
             header('Location: '.$_SERVER['HTTP_REFERER']);
         }
     }
+
+    /**
+     * Active ou désactive un avis
+     * @param int $id
+     * @return void
+     */
+    public function activeAvis(int $id)
+    {
+        if($this->isAdmin()){
+            $avisModel = new AvisModel;
+
+            $avisArray = $avisModel->find($id);
+
+            if($avisArray){
+                $avi = $avisModel->hydrate($avisArray);
+
+                $avi->setActif($avi->getActif() ? 0 : 1);
+
+                $avi->update();
+            }
+        }
+    }
 }
