@@ -25,9 +25,9 @@ $avis;
                 </div>
             </td>
             <td>
-                <!-- !TODO  ajouter un scripts js demandant si l'on est sur de vouloir modifier-->
+                <!-- !TODO  ajouter un scripts js demandant si l'on est sur de vouloir modifier/supprimer-->
                 <a href="/avis/modifier/<?= $avi->id ?>" class="btn btn-warning">modifier</a>
-                <a href="" class="btn btn-danger">supprimer</a>
+                <a href="/admin/supprimeAvis/<?= $avi->id ?>" class="btn btn-danger">supprimer</a>
             </td>
         </tr>
     <?php endforeach; ?>
