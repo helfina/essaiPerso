@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 
 use App\Models\AvisModel;
+use App\Models\UsersModel;
 
 class AdminController extends Controller
 {
@@ -49,7 +50,7 @@ class AdminController extends Controller
             $avis = $AvisModel->findAll();
 
             // on envoie a la vue
-            $this->render('admin/avis', compact('avis'), 'admin');
+            $this->render('admin/avisList', compact('avis'), 'admin');
         }
     }
         /**
@@ -86,4 +87,22 @@ class AdminController extends Controller
             }
         }
     }
+
+    /**
+    * affiche la listes des utilisateur sous forme de tableau
+    */
+    public function listUser()
+    {
+        if ($this->isAdmin()) {
+            // On inctancie le modele
+            $UsersModel = new UsersModel;
+
+            // on va chercher une rubrique
+            $users = $UsersModel->findAll();
+
+            // on envoie a la vue
+            $this->render('admin/listUser', compact('users'), 'admin');
+        }
+    }
+
 }
