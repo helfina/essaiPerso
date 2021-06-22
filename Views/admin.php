@@ -17,7 +17,7 @@ require_once ROOT . '/Views/includes/head.php';
             <li><a href="/admin/index">Accueil de l'admin</a></li>
             <li><a href="/">Accueil du site</a></li>
             <li><a href="#">listes des avis</a></li>
-            <li><a href="#">listes des utilisateurs</a></li>
+            <li><a href="/admin/listUser">listes des utilisateurs</a></li>
         </ul>
 
         <ul>
