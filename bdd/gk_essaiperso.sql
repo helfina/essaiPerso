@@ -7,14 +7,6 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
-CREATE TABLE `articles` (
-                            `id` int(11) NOT NULL AUTO_INCREMENT,
-                            `titre` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-                            `content` int(255) NOT NULL,
-                            PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
 CREATE TABLE `avis` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `titre` varchar(255) NOT NULL,
