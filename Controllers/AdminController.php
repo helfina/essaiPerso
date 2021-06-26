@@ -22,7 +22,7 @@ class AdminController extends Controller
     /**
      * vérifie si on est admin
      */
-    private function isAdmin()
+    public function isAdmin($restreindre = true)
     {
         //on  verifie si on est connecté et si "ROLE_ADMIN" est dans nos roles
         if (isset($_SESSION['user']) && in_array("ROLE_ADMIN", $_SESSION['user']['roles'])) {
@@ -30,9 +30,13 @@ class AdminController extends Controller
             return true;
 
         } else {
-            $_SESSION['erreur'] = "Vous n'avez pas acces a cette zone";
-            header('Location: /');
-            exit;
+            if($restreindre){
+                $_SESSION['erreur'] = "Vous n'avez pas acces a cette zone";
+                header('Location: /');
+                exit;
+            }else{
+                return false;
+            }
         }
 
     }

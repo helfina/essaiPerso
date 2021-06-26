@@ -38,8 +38,18 @@ class UsersController extends Controller
                 // Le mot de passe est bon
                 // On crée la session
                 $user->setSession();
-                header('Location: /users/profil');
+                // TODO verifier le role  admin si c'est le role admin alors on redirige vers index admin
+                $adminController = new AdminController;
+
+                if($adminController->isAdmin(false)){
+                    $url = '/admin/index';
+                }else{
+                    $url =  '/users/profil';
+                }
+
+                header('Location: '. $url);
                 exit;
+
             } else {
                 // Mauvais mot de passe
                 $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mot de passe est incorrect';
