@@ -1,12 +1,8 @@
-footer{
+footer>aside{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
-
-footer>a{
-    margin: 10px;
-}
-footer>a>img{
-    width: 80px;
+footer>aside>a>img{
+    width: 100px;
+    border: 3px solid #17a2b8;
 }
