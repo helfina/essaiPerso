@@ -1,0 +1,11 @@
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer>a{
+    margin: 10px;
+}
+footer>a>img{
+    width: 80px;
+}
