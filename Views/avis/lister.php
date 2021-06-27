@@ -14,7 +14,7 @@ foreach ($avis as $avi) : ?>
             if (!empty($_SESSION['user']['id']) && $_SESSION['user']['id'] == $avi->users_id ) :
         ?>
 
-        <a href="/avis/modifier/<?= $avi->id ?>" class="btn btn-warning">Modifier</a>
+        <a href="/avis/modifier/<?= $avi->id ?>" class="btn btn-warning mt-2">Modifier</a>
         <?php endif;?>
 
     </article>

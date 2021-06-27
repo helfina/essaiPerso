@@ -9,6 +9,8 @@ class UsersModel extends Model
     protected $id;
     protected $email;
     protected $password;
+    protected $nom;
+    protected $prenom;
     protected $roles;
     protected $users_id;
 
@@ -40,6 +42,7 @@ class UsersModel extends Model
             'email' => $this->email,
             'roles' => $this->roles
         ];
+
     }
 
     /**
@@ -102,6 +105,45 @@ class UsersModel extends Model
         return $this;
     }
 
+    /**
+     * Get the value of Nom
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set the value of Nom
+     *
+     * @return  self
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Prenom
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set the value of Prenom
+     *
+     * @return  self
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
 
     /**
      * Get the value of roles

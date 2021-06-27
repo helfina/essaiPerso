@@ -131,7 +131,22 @@ class UsersController extends Controller
     }
 
     public function profil(){
-        // On génère la vue
-        $this->render('users/profil');
+        if (!empty($_SESSION['user'])){
+            $userModel = new UsersModel;
+            // on va chercher l'utilisateur
+            $userId = $_SESSION['user']['id'];
+            $user = $userModel->find($userId);
+            //var_dump($user);
+            // On génère la vue
+            $this->render('users/profil', compact('user'));
+        }else{
+            //header('HTTP/1.0 403 Forbidden');
+            http_response_code(403);
+           // die('Forbidden');
+            $this->render('/error/403', [], 'home');
+
+        }
     }
+
+
 }

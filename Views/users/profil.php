@@ -3,9 +3,9 @@
     <nav>
         <img src="/images/avatar.png" alt="avatar">
         <ul style="display: flex; flex-direction: column">
-            <li>nom</li>
-            <li>prenom</li>
-            <li>role</li>
+            <li><?= $user->nom ?></li>
+            <li><?= $user->prenom ?></li>
+            <li><?= $user->email?></li>
         </ul>
 
     </nav>
