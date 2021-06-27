@@ -38,9 +38,9 @@ class UsersController extends Controller
                 // Le mot de passe est bon
                 // On crée la session
                 $user->setSession();
-                // TODO verifier le role  admin si c'est le role admin alors on redirige vers index admin
-                $adminController = new AdminController;
 
+                $adminController = new AdminController;
+                // on verifie si c'est un admin et on le redirige vers vers la page admin
                 if($adminController->isAdmin(false)){
                     $url = '/admin/index';
                 }else{
