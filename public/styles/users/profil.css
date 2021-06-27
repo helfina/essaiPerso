@@ -1,0 +1,11 @@
+.profil{
+    display: flex;
+}
+.profil>nav{
+    display: flex;
+    flex-direction: column;
+}
+.profil>nav>img{
+    border-radius: 50%;
+    width: 95px;
+}

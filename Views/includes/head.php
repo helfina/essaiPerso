@@ -22,6 +22,6 @@
     <link href="/styles/footer.css" rel="stylesheet" type="text/css">
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="/styles/cv.css" rel="stylesheet" type="text/css">
-
+    <link href="/styles/users/profil.css" rel="stylesheet" type="text/css">
 
 </head>
