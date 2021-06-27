@@ -15,6 +15,7 @@
             <li><a href="/contact">Contact</a></li>
         </ul>
 
+        <!-- TODO revoir la structure du menu-->
         <ul>
             <?php if (!empty($_SESSION['user']['id'])): ?>
 
